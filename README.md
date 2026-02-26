@@ -1,3 +1,5 @@
+[中文](https://github.com/yjwx0017/ModTemplate/blob/main/README_zh.md)
+
 # About
 
 MOD template project of game [Open Fire: Ready](https://store.steampowered.com/app/4261400/_/).
