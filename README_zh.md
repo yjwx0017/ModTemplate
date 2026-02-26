@@ -70,15 +70,11 @@ Texture Group 选择 UI。
 
 ![CustomMap](https://github.com/user-attachments/assets/3eb7b46f-a5d0-44ec-a424-35d408446565)
 
-MapID 地图的唯一标识，建议使用GUID。
-
-MapName 用于在UI上显示的地图名称。
-
-Map 引用新建的地图资产。
-
-PreviewImage 引用地图的预览图纹理资产。
-
-SupportedGameModes 指定该地图支持的游戏模式。
+- MapID - 地图的唯一标识，建议使用GUID。
+- MapName - 用于在UI上显示的地图名称。
+- Map - 引用新建的地图资产。
+- PreviewImage - 引用地图的预览图纹理资产。
+- SupportedGameModes - 指定该地图支持的游戏模式。
 
 可用的游戏模式ID：
 
@@ -95,7 +91,7 @@ IsMod 和 ModID 无需填写，主游戏负责填充。
 
 ## 创建 PrimaryAssetLabel 数据资产
 
-该资产将导致所在文件内的所有内容被打包成单独的pak文件。
+该资产将导致所在文件夹内的所有内容被打包成单独的pak文件。
 
 ![AssetLabel](https://github.com/user-attachments/assets/bd80ac4e-6dc6-4444-927c-7465b65a4399)
 
@@ -144,12 +140,12 @@ json文件内容：
 }
 ```
 
-- PublishedFileId 无需填写，上传到创意工坊时，会自动填入
-- Title Mod标题
-- Description Mod描述
-- PreviewURL 预览图路径
-- ID Mod唯一标识，建议使用GUID
-- Tags 自定义标签
+- PublishedFileId - 无需填写，上传到创意工坊时，会自动填入
+- Title - Mod标题
+- Description - Mod描述
+- PreviewURL - 预览图路径
+- ID - Mod唯一标识，建议使用GUID
+- Tags - 自定义标签
 
 游戏启动时，会自动加载Mods目录下的所有Mod。
 
@@ -160,5 +156,7 @@ json文件内容：
 ## 上传到创意工坊
 
 游戏内的Mods界面中，单击“上传”按钮，Mod会被上传到Steam创意工坊，上传成功后会自动转到创意工坊物品所在页面。
+
+在贡献者同意[《Steam 创意工坊法律协议》](https://steamcommunity.com/sharedfiles/workshoplegalagreement)前，创意工坊物品默认为隐藏状态。
 
 ![upload](https://github.com/user-attachments/assets/4eb12ecc-8235-4f8d-8d0a-e7079bbfc8a4)
