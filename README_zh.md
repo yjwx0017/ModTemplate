@@ -91,6 +91,8 @@ MapCapacity 仅用于僵尸模式，用于指定地图能同时容纳的最大�
 
 IsMod 和 ModID 无需填写，主游戏负责填充。
 
+一个Mod中可包含多个自定义地图。
+
 ## 创建 PrimaryAssetLabel 数据资产
 
 该资产将导致所在文件内的所有内容被打包成单独的pak文件。
@@ -109,4 +111,54 @@ IsMod 和 ModID 无需填写，主游戏负责填充。
 
 ## 本地测试
 
+将pak文件放到游戏所在目录，目录结构如下：
+
+```
+steamapps/common/Open Fire Ready
+├── Engine
+├── OpenFireReady
+│   ├── Binaries
+│   ├── Config
+│   ├── Content
+│   └── Mods
+│       ├── Example                           (1) pak所在文件夹，表示一个Mod，可以取任意名称
+│       │   └── pakchunk101-Windows.pak       (2) Mod打包生成的pak文件
+│       └── metadata
+│           ├── Example.json                  (3) 对应某个Mod的信息，文件名必须与(1)中的文件夹名称相同
+│           └── Example_preview.png           (4) Mod预览图，在json文件中引用
+└── OpenFireReady.exe
+```
+
+json文件内容：
+
+```json
+{
+	"PublishedFileId": "",
+	"Title": "Example",
+	"Description": "Example MOD",
+	"PreviewURL": "Example_preview.png",
+	"ID": "f819c4c7-12e5-4b2d-9af3-cdb4ca4887e4",
+	"Tags": [
+		"Map"
+	]
+}
+```
+
+- PublishedFileId 无需填写，上传到创意工坊时，会自动填入
+- Title Mod标题
+- Description Mod描述
+- PreviewURL 预览图路径
+- ID Mod唯一标识，建议使用GUID
+- Tags 自定义标签
+
+游戏启动时，会自动加载Mods目录下的所有Mod。
+
+如果Mod加载成功，地图列表会显示相应条目：
+
+![map](https://github.com/user-attachments/assets/b69c53e3-33f0-4211-8312-7eb92faaa316)
+
 ## 上传到创意工坊
+
+游戏内的Mods界面中，单击“上传”按钮，Mod会被上传到Steam创意工坊，上传成功后会自动转到创意工坊物品所在页面。
+
+![upload](https://github.com/user-attachments/assets/4eb12ecc-8235-4f8d-8d0a-e7079bbfc8a4)
